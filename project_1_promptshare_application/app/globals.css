@@ -25,3 +25,15 @@ body {
     text-wrap: balance;
   }
 }
+
+.bouton{
+ margin: 40px;
+  background-color: green;
+  border-radius: 10px;
+  width: 100px;
+
+}
+
+.bouton:hover{
+  background-color: red;
+}
