@@ -7,24 +7,29 @@ import { useState } from 'react'
 
 const NavbarSection = () => {
 
-    const  [greeting , setGreeting]= useState('')
+const  [greeting , setGreeting]= useState('') ; 
+let status = true ; 
 
-function  handleClick(userName ){
+function  handleClick(userName){
 
     return (
+  <div>
 
-        alert(`Bonjour  Madame Monsieur 
-            ${userName}`)
+    {`Bonjour  Madame Monsieur 
+            ${userName}`}
+  </div>
+   
+
     )
 }
 
 return (
-    <div className='navbar'>
+<div className='navbar'>
+<input placeholder='Enter your name' className='inputsection' value={greeting} onChange={(e)=>setGreeting(`${e.target.value}`)}/>
 
- <input placeholder='Enter your name' className='inputsection' value={greeting} onChange={(e)=>setGreeting(`${e.target.value}`)}/>
 
 <button className='bouton' onClick={()=>handleClick(greeting)}>submit </button>
-
+<p className='greeting'>{handleClick(greeting)}</p>
 
     </div>
   )
