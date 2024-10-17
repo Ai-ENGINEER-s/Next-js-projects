@@ -1,3 +1,5 @@
+import { PI, additionFunction } from "./math";
+
 // apprendre le ES6 
 
 // ES6  ou ECMACScript 2015 , est une version majeure de JavaScript qui a introduit des fonctionnalité puissantes , ameliorant le langage  de manière significative . Dans ce cours , nous verons ensemble toutes les fonctionnalités de ES6 
@@ -107,3 +109,124 @@ const nam = user.name ;
 // avec ES6   
 
 const {id1 , name1} = user ; 
+console.log(id1 , name1)
+
+// Destructuration des tableaux : 
+
+const numbersNumb = [1,2,5,6,9,8,3,8] ; 
+// avant ES6  
+const first = numbersNumb[0] ; 
+
+// avec ES6  : 
+[a , b , h , k ,o] = numbersNumb
+console.log(`a : ${a} , b:${b} , k : ${k} , o :${o}`) ; 
+
+
+// VII- Rest and SPREAD Operators 
+
+// Ces deux operateurs ... sont parmi les plus utilisés en ES6 . Spread Operator permet d'etendre les elements d'un tableau ou d'un objet dans un autre . 
+
+// Spread Operator (disséminer les éléments d'un tableau ou objet ) : Le spread operator permet permet d'etendre les elements d'un tableau ou d'un objet dans un autre  . 
+
+// Le rest operator permet de regrouper des arguments ou des elements restant dans un tableau 
+
+// Exemple dans une fonction 
+
+
+
+
+// Pour les tableaux 
+const arr1 = [1,2,3,6,5,8,9,6] ; 
+const arr2 = [ ...arr1 , 4,5] ; 
+console.log(arr2)
+
+// Pour les objets 
+
+const obj1 = {val1 : 1 , val2 : 2 , val3:3} ; 
+const obj2 = {...obj1 , c : 856}
+
+console.log(obj2)
+
+
+// Rest Operator (collecter des arguments dans une fonction) :
+// Le rest operator permet de regrouper des arguments ou des éléments restants dans un tableau.
+
+// Exemple dans une fonction :
+// js
+// Copy code
+
+
+function sum(...numbers) {
+  return numbers.reduce((acc, num) => acc + num, 0);
+}
+
+console.log(sum(1, 2, 3, 4)); // 10
+
+
+// VIII Les Promesses (Promises ) : 
+
+// ES6  introduit les promesses pour gerer plus simplement le code asynchrone (remplaçant les "callback-hell")
+
+
+const promise = new Promise((resolve , reject)=>{
+
+    // Opération asychrone 
+
+    if(true){
+        resolve('Operation Reussie')
+    }else {
+        reject('Opération échouée ')
+    }
+})
+
+promise .then(result => console.log(result))
+.catch(error=>console.log(error)) ; 
+
+
+// IX- Les Classes  : 
+
+// Les classes en ES6 fournissent une syntaxe plus propre pour la programmations orientée objet. Elles ne remplacent pas le modèle basé sur les prototypes mais rendent la gestion des objets et l'heritage plus intuitive . 
+
+
+class Person{
+
+    constructor(name , age){
+        this.name = name ; 
+        this.age = age ; 
+    }
+    greet(){
+        console.log(`Hello , my name is ${this.name}`)
+    }
+}
+
+const john = new Person('Jon'  ,  25)
+
+john.greet() ;
+
+// Heritage avec extends 
+
+class Employee extends Person {
+
+constructor(name , age , jobTitle){
+
+    super(name , age) ; // appelle  le constructeur de la classe parente 
+
+    this.jobTitle = jobTitle  ; 
+}
+
+ work() {
+    console.log(`${this.name} is working as a ${this.jobTitle}`) ; 
+}
+
+}
+const alice = new Employee('Alice' ,30 , 'Developer') ; 
+alice.greet() ; 
+alice.work() ; // 
+
+
+// XX- Les modules ES6 (import / export)
+// avant ES6 , il etait difficile de modulariser du code en javaScript . ES6 introduit import/export pour permettre une organisation modulaire du code . 
+
+// Exporter des variables ou fonctions 
+
+
