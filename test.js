@@ -1,4 +1,10 @@
-import { PI, additionFunction } from "./math";
+// main.js
+import { PI, additionFunction } from './math.js';
+
+console.log(PI); // 3.14
+console.log(additionFunction(2, 3)); // 5
+
+
 
 // apprendre le ES6 
 
@@ -36,9 +42,7 @@ let yourAge = 45 ;
 
 
 
-const add = (a  , b)=> a+b ; 
 
-console.log(add(89, 85))
 
 // III- les fonction anonymes 
 
@@ -229,4 +233,4 @@ alice.work() ; //
 
 // Exporter des variables ou fonctions 
 
-
+console.log(`la valeur de PI est : ${PI}`)
